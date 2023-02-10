@@ -3,17 +3,13 @@
     <v-responsive class="d-flex align-center text-center fill-height">
       <v-img
         contain
-        height="300"
-        src="@/assets/logo.svg"
+        height="200"
+        src="@/assets/images/Poké_Ball_icon.svg"
       />
 
-      <div class="text-body-2 font-weight-light mb-n1">Welcome to</div>
+      <h1 class="text-h2 font-weight-bold">Pokémon Search</h1>
 
-      <h1 class="text-h2 font-weight-bold">Vuetify</h1>
-
-      <div class="py-14" />
-
-      <v-row class="d-flex align-center justify-center">
+      <v-row class="d-flex align-center justify-center mt-16">
         <v-col cols="auto">
           <v-btn
             href="https://next.vuetifyjs.com/components/all/"
@@ -70,6 +66,7 @@
           </v-btn>
         </v-col>
       </v-row>
+      <div class="py-14"></div>
     </v-responsive>
   </v-container>
 </template>
