@@ -1,6 +1,6 @@
 <template>
-  <v-card class="mx-auto" max-width="344">
-    <v-img :src="pokemonImage" height="200px" cover></v-img>
+  <v-card class="mx-auto" max-width="340">
+    <v-img :src="pokemonImage"></v-img>
 
     <v-card-title>
       {{ pokemon.name }}
@@ -11,8 +11,8 @@
     </v-card-subtitle>
 
     <v-card-actions>
-      <v-btn color="orange-lighten-2" variant="text">
-        Explore
+      <v-btn color="orange-lighten-2" variant="text" @click="show = !show">
+        Details
       </v-btn>
 
       <v-spacer></v-spacer>
@@ -24,10 +24,16 @@
       <div v-show="show">
         <v-divider></v-divider>
 
-        <v-card-text>
-          <!-- <v-chip v-for="item in abilitiesNames" :key="item"></v-chip>
-          {{ item }} -->
-        </v-card-text>
+        <ul class="d-flex justify-center flex-column pa-5">
+          <h4>Stats </h4>
+          <li class="mx-6" v-for="stat in pokemonStats" :key="stat">{{ stat.name }} : {{ stat.value }}</li>
+        </ul>
+
+        <ul class="d-flex flex-column justify-center pa-5">
+          <h4>Abilities </h4>
+          <li class="mx-6" v-for="name in abilitiesNames" :key="name">{{ name }}</li>
+        </ul>
+
       </div>
     </v-expand-transition>
   </v-card>
@@ -40,7 +46,8 @@ const props = defineProps(['pokemon']);
 
 const pokemonImage = computed(() => props.pokemon.sprites.front_default)
 const pokemonTypes = computed(() => props.pokemon.types.map((type) => type.type.name))
-// const abilitiesNames = computed(() => props.abilities.map(ability => ability.ability.name))
+const pokemonStats = computed(() => props.pokemon.stats.map((stat) => { return { name: stat.stat.name, value: stat.base_stat } }))
+const abilitiesNames = computed(() => props.pokemon.abilities.map(ability => ability.ability.name))
 
 
 console.log(props)
