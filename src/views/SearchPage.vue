@@ -8,7 +8,6 @@
       <v-row class="d-flex align-center justify-center mt-16">
         <pokemon-input @onSearch="serchPokemonByName" />
       </v-row>
-      {{ currentPokemons.length }}
     </v-responsive>
   </v-container>
 </template>

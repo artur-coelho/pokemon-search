@@ -1,8 +1,8 @@
 <template>
   <v-sheet width="400" class="mx-auto">
-    <v-autocomplete v-model="pokemonInputed" :items="pokemonsFiltered" no-data-text="Nenhum pokemon encontrado"
-      item-value="name" item-title="name" label="Nome do pokemon" class="pokemon-input"
-      @update:modelValue="onUpdateModelValue" @update:search="onUpdateSearch"></v-autocomplete>
+    <v-autocomplete v-model="pokemonInputed" :items="pokemonsFiltered" no-data-text="No pokémon found" item-value="name"
+      item-title="name" label="Pokémon name" class="pokemon-input" @update:modelValue="onUpdateModelValue"
+      @update:search="onUpdateSearch"></v-autocomplete>
   </v-sheet>
 </template>
 

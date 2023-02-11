@@ -1,8 +1,8 @@
 <template>
   <v-container class="fill-height">
     <v-responsive>
-      <v-row>
-        <v-col sm="4" v-for="pokemon in pokemonsResult" :key="pokemon.id">
+      <v-row class="ma-0 mt-10">
+        <v-col col="12" sm="6" md="4" v-for="pokemon in pokemonsResult" :key="pokemon.id">
           <PokemonCard :pokemon="pokemon" />
         </v-col>
       </v-row>
