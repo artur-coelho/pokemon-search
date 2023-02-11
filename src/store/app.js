@@ -11,8 +11,8 @@ export const useAppStore = defineStore("app", {
     fetchAllPokemons() {
       try {
         pokeApiService.fetchAllPokemons().then(({ data }) => {
-          this.allPokemons = data;
-          return Promise.resolve(data);
+          this.allPokemons = data.results;
+          return Promise.resolve(data.results);
         });
       } catch (error) {
         return Promise.reject(error);
