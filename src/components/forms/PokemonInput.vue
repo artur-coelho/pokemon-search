@@ -25,7 +25,7 @@ const pokemonsFiltered = computed(() =>
 )
 
 const filterPokemons = (pokemonName) => {
-  return allPokemons.value.filter(({ name }) => name.includes(pokemonName))
+  return allPokemons.value.filter(({ name }) => name.toLowerCase().includes(pokemonName.toLowerCase()))
 }
 
 const onUpdateModelValue = (searchName) => {
