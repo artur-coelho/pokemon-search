@@ -25,14 +25,14 @@ const serchPokemonByName = async (name) => {
   store.$patch(
     { currentPokemons: [], }
   )
-  await store.fetchPokemonSpecieByName(name).then((species) => {
-    recursivePokemonChain(species.chain)
+  await store.fetchPokemonSpecieByName(name).then(async (species) => {
+    await recursivePokemonChain(species.chain)
   })
   router.push('/search-results')
 }
 
-const recursivePokemonChain = (chain) => {
-  store.fetchPokemonByName(chain.species.name)
+const recursivePokemonChain = async (chain) => {
+  await store.fetchPokemonByName(chain.species.name)
   if (chain.evolves_to.length > 0) {
     chain.evolves_to.forEach(element => {
       recursivePokemonChain(element)

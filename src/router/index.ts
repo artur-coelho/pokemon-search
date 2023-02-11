@@ -21,6 +21,7 @@ const routes = [
       }
     ],
   },
+  { path: '/:notFound(.*)', component: () => import('@/views/NotFound.vue') },
 ]
 
 const router = createRouter({
