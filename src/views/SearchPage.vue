@@ -13,7 +13,6 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
 import { useRouter } from 'vue-router';
 import { useAppStore } from '@/store/app'
 import PokemonInput from '../components/forms/PokemonInput.vue';
@@ -21,7 +20,6 @@ import PokemonInput from '../components/forms/PokemonInput.vue';
 const router = useRouter()
 const store = useAppStore();
 
-const currentPokemons = computed(() => store.currentPokemonsGetter)
 
 const serchPokemonByName = async (name) => {
   store.$patch(

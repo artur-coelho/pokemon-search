@@ -49,7 +49,5 @@ const pokemonTypes = computed(() => props.pokemon.types.map((type) => type.type.
 const pokemonStats = computed(() => props.pokemon.stats.map((stat) => { return { name: stat.stat.name, value: stat.base_stat } }))
 const abilitiesNames = computed(() => props.pokemon.abilities.map(ability => ability.ability.name))
 
-
-console.log(props)
 const show = ref(false)
 </script>
