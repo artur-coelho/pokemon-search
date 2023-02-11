@@ -28,5 +28,5 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "vite.config.ts"
-, "src/services/index.js", "src/services/index.js", "src/store/app.js", "src/store/app.js"  ]
+, "src/services/index.js","src/store/app.js", "src/services/pokeApi.service.js" ]
 }

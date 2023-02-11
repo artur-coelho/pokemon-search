@@ -7,26 +7,29 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, defineEmits } from 'vue'
 import { useAppStore } from '@/store/app'
 
 const store = useAppStore()
 const pokemonsLimit = 50
+const emit = defineEmits(['onSearch'])
 
 const debounce = ref(null)
 const pokeName = ref(null)
 const pokemonInputed = ref(null)
 
+
 const allPokemons = computed(() => store.allPokemonsGetter)
 const pokemonsFiltered = computed(() =>
-  !pokeName.value ? allPokemons.value.slice(0, pokemonsLimit) : filterAllPokemons(pokeName.value).slice(0, pokemonsLimit)
+  !pokeName.value ? allPokemons.value.slice(0, pokemonsLimit) : filterPokemons(pokeName.value).slice(0, pokemonsLimit)
 )
 
-const filterAllPokemons = (pokemonName) => {
+const filterPokemons = (pokemonName) => {
   return allPokemons.value.filter(({ name }) => name.includes(pokemonName))
 }
 
-const onUpdateModelValue = () => {
+const onUpdateModelValue = (searchName) => {
+  emit('onSearch', searchName)
   pokeName.value = ''
 }
 
@@ -34,7 +37,7 @@ const onUpdateSearch = (value) => {
   if (debounce.value) clearTimeout(debounce.value)
   debounce.value = setTimeout(() => {
     pokeName.value = value
-  }, 300)
+  }, 400)
 }
 
 // created

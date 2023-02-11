@@ -7,4 +7,10 @@ export default {
   fetchPokemonByName: (name) => {
     return http.get(`pokemon/${name}`);
   },
+  fetchPokemonSpecieByName: (name) => {
+    return http.get(`pokemon-species/${name}`);
+  },
+  fecthEvolutionChain: (url) => {
+    return http.get(url);
+  },
 };
