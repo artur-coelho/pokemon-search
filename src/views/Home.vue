@@ -3,5 +3,5 @@
 </template>
 
 <script lang="ts" setup>
-import SearchPage from '@/components/SearchPage.vue';
+import SearchPage from '@/views/SearchPage.vue';
 </script>
