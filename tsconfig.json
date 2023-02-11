@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "allowJs": true,
+    "skipLibCheck": true,
     "baseUrl": ".",
     "target": "esnext",
     "useDefineForClassFields": true,
