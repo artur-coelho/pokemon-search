@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "allowJs": true,
     "baseUrl": ".",
     "target": "esnext",
     "useDefineForClassFields": true,
@@ -27,5 +28,5 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "vite.config.ts"
-  ]
+, "src/services/index.js","src/store/app.js", "src/services/pokeApi.service.js" ]
 }
