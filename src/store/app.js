@@ -28,7 +28,6 @@ export const useAppStore = defineStore("app", {
           .fetchPokemonByName(payload)
           .then(({ data }) => {
             this.currentPokemons.push(data);
-            console.log(data);
             resolve(data);
           })
           .catch((error) => {
